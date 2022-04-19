@@ -50,28 +50,28 @@ function rezultats() {
     m1 = m.m1; m2 = m.m2; m3 = m.m3;
     console.log(m1, m2, m3);
     if (!nolasa()) {
-        t = "Nekorekti ievaddati, trijstūra malu vērtībām ir jābūt lielākiem par 0";
+        t = "Nekorekti ievaddati, trijstūra malu vērtībām ir jābūt lielākiem par 0. ";
     } else {
         if (irTrijsturis(m1, m2, m3) == false) {
-            t = "Trijstūris neesksistē, jo jebkuru divu mallu sumām ir jābūt lielākām par trešo malu";
+            t = "Trijstūris neesksistē, jo jebkuru divu mallu sumām ir jābūt lielākām par trešo malu. ";
         } else {
-            t = "Trijstūris ar malu garumiem " + m1 + "," + m2 + "un " + m3 + "eksistē."
+            t = "Trijstūris ar malu garumiem " + m1 + "," + m2 + " un " + m3 + " eksistē."
             if (m1 == m2 && m2 == m3) {
-                t += "Tas ir vienādalu trijstūris"
+                t += "Tas ir vienādmalu trijstūris"
             }
         }
     }
     const p = (m1, m2, m3);
     const s = Math.round(laukums(m1, m2, m3) * 100) / 100;
-    t += "Perimetrs ir" + p + "un laukums ir" + s + ".";
+    t += "Perimetrs ir " + p + " un laukums ir " + s + ".";
     console.log(t);
     return t;
 }
-function izvadaTekstu(){
+function izvadaTekstu() {
     const teksts = rezultats();
     console.log(teksts);
-    const sakne=document.getElementById("izvade");
+    const sakne = document.getElementById("izvade");
     const raksti = document.createElement("p");
-    sakne,innerHTML = teksts;
+    raksti.innerHTML = teksts;
     sakne.appendChild(raksti);
 }
